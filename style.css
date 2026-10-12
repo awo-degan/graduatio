@@ -1,0 +1,559 @@
+/* QAABKA GUUD */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fff9fc;
+    color: #674a70;
+    line-height: 1.85;
+    overflow-x: hidden;
+}
+
+:root {
+    --pink: #df80ae;
+    --dark-pink: #b45189;
+    --purple: #986bc0;
+    --dark-purple: #70457f;
+    --light-pink: #fff0f7;
+}
+
+/* LOGIN SCREEN */
+.login-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffe0ed, #eadcff, #fff0f5);
+    overflow: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.login-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 390px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    border: 2px solid #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 15px 45px rgba(170, 90, 150, 0.2);
+    animation: cardAppear 1s ease;
+}
+
+.login-cap {
+    font-size: 65px;
+    margin-bottom: 10px;
+    animation: capFloat 2s infinite ease-in-out;
+}
+
+.login-card h1 {
+    color: #b83280;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.login-card p {
+    color: #79516e;
+    line-height: 1.6;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+#loginForm input {
+    padding: 14px;
+    border: 1px solid #e8b6d3;
+    border-radius: 14px;
+    outline: none;
+    font-size: 15px;
+    background: #fffafd;
+}
+
+#loginForm input:focus {
+    border-color: #c44c99;
+    box-shadow: 0 0 8px #f4c4df;
+}
+
+#loginForm button {
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #d84c9b, #8e55cf);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#loginForm button:hover {
+    transform: scale(1.04);
+}
+
+.login-note {
+    margin-top: 22px;
+    font-size: 13px;
+}
+
+/* FLOWERS, HEARTS AND GRADUATION DECORATIONS */
+#celebrationLayer {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-decoration {
+    position: absolute;
+    top: -60px;
+    animation: fallAndFloat linear forwards;
+    will-change: transform, opacity;
+}
+
+/* BILOWGA WEBSITE-KA */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(
+        135deg,
+        #ffe5ef,
+        #eee0ff,
+        #fff8fb
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+    content: "✿";
+    position: absolute;
+    color: #d9a3ce;
+    opacity: 0.3;
+    font-size: 150px;
+}
+
+.hero::before {
+    top: 10px;
+    left: -25px;
+}
+
+.hero::after {
+    bottom: 5px;
+    right: -25px;
+}
+
+.hero-content {
+    max-width: 750px;
+    position: relative;
+    z-index: 1;
+    animation: appear 1s ease;
+}
+
+.cap {
+    font-size: 80px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.eyebrow {
+    color: var(--dark-pink);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-size: clamp(36px, 7vw, 65px);
+    line-height: 1.25;
+    color: var(--dark-purple);
+    margin-bottom: 22px;
+}
+
+h1 span {
+    color: var(--pink);
+}
+
+.hero-content > p:not(.eyebrow):not(.small-note) {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    font-size: 17px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 27px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(
+        135deg,
+        var(--pink),
+        var(--purple)
+    );
+    color: white;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 22px #b77ab533;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px #b77ab555;
+}
+
+.button:focus-visible {
+    outline: 3px solid var(--dark-purple);
+    outline-offset: 4px;
+}
+
+.small-note {
+    margin-top: 22px;
+    color: #9f7aa5;
+    font-size: 13px;
+}
+
+/* QAYBAHA IYO CINWAANNADA */
+
+.section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 85px 22px;
+    text-align: center;
+}
+
+.section h2 {
+    color: var(--dark-purple);
+    font-size: clamp(27px, 4vw, 38px);
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.alternate {
+    max-width: none;
+    background: linear-gradient(
+        135deg,
+        #fff0f7,
+        #f4edff
+    );
+}
+
+/* SAWIRRADA */
+
+.photo-frame {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 650px;
+    border: 5px solid white;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        #f9e0ec,
+        #e9dcfb
+    );
+    box-shadow: 0 12px 32px #8c63951c;
+}
+
+/* Meesha sawirka walaasha */
+
+.photo-frame.portrait {
+    max-width: 400px;
+    aspect-ratio: 4 / 5;
+}
+
+/* Meelaha sawirrada ballaaran */
+
+.photo-frame.landscape {
+    aspect-ratio: 16 / 10;
+}
+
+.photo-frame::before {
+    content: "♡";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    font-size: 55px;
+    color: #c18ab8;
+    opacity: 0.8;
+}
+
+.photo-frame::after {
+    content: "Sawirka halkan geli";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 62%;
+    color: var(--dark-purple);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.photo-frame img {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    margin: 20px auto 28px;
+    color: var(--dark-pink);
+    font-size: 15px;
+    font-style: italic;
+}
+
+/* QORAALLADA HOOSE EE SAWIRRADA */
+
+.message {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 28px;
+    text-align: left;
+    background: white;
+    border: 1px solid #f2dbea;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px #9b6aa40d;
+    font-size: 16px;
+}
+
+/* FARriinta GAARKA AH */
+
+.surprise {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 35px 28px;
+    background: white;
+    border: 1px solid #f2dbea;
+    border-radius: 28px;
+    box-shadow: 0 12px 35px #8c63951c;
+}
+
+.gift {
+    font-size: 65px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.surprise-intro {
+    margin: 0 auto 25px;
+    max-width: 550px;
+}
+
+.hidden-message {
+    margin-top: 28px;
+    padding: 25px;
+    background: linear-gradient(
+        135deg,
+        #fff0f7,
+        #f4edff
+    );
+    border: 1px dashed #d69ac5;
+    border-radius: 20px;
+    text-align: left;
+    animation: appear 0.6s ease;
+}
+
+.hidden-message[hidden] {
+    display: none;
+}
+
+.hidden-message h3 {
+    text-align: center;
+    color: var(--dark-pink);
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.hidden-message p {
+    margin-bottom: 17px;
+}
+
+.final-message {
+    text-align: center;
+    color: var(--dark-pink);
+    font-weight: bold;
+}
+
+.celebration {
+    text-align: center;
+    font-size: 27px;
+    margin-top: 15px;
+}
+
+/* DHAMMAADKA WEBSITE-KA */
+
+footer {
+    padding: 35px 15px;
+    text-align: center;
+    color: var(--dark-purple);
+    background: #f7e9f8;
+    font-size: 14px;
+}
+
+footer p + p {
+    margin-top: 5px;
+}
+
+@keyframes fallAndFloat {
+    0% {
+        transform: translateY(-60px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(55vh) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes capFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* ANIMATION */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TELEFOONKA */
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 80vh;
+        padding: 55px 18px;
+    }
+
+    .cap {
+        font-size: 65px;
+    }
+
+    .hero-content > p:not(.eyebrow):not(.small-note) {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 60px 16px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .photo-frame.portrait {
+        max-width: 330px;
+    }
+
+    .message {
+        padding: 20px;
+        font-size: 15px;
+    }
+
+    .surprise {
+        padding: 28px 18px;
+    }
+
+    .hidden-message {
+        padding: 18px;
+        font-size: 14px;
+    }
+
+    .button {
+        max-width: 100%;
+    }
+
+    .login-card {
+        padding: 28px 18px;
+    }
+
+    .login-card h1 {
+        font-size: 25px;
+    }
+}
+
+
+
+
+
